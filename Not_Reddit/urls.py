@@ -7,7 +7,7 @@ from accounts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("register/", views.register_page, name="register_page"),
-    path("home/", include("startup.urls")),
+    path("", include("startup.urls")),
     path("", include("django.contrib.auth.urls")),
 ]
 
