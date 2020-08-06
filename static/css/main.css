@@ -1,0 +1,331 @@
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+body {
+    font-family: Montserrat-Medium;
+    /*background-color: rgb(0, 50, 83);*/
+    background-image: linear-gradient(to right, rgb(19, 68, 222), rgb(0, 19, 56));
+}
+
+.home_div {
+    color: white;
+}
+
+.about_div {
+    color: black;
+}
+
+.meaning {
+    color: #343b3f;
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.about-meaning {
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.team-jumbo {
+    color: white;
+
+}
+
+.first_jumbo {
+    color: #343b3f;
+}
+
+.about-jumbo {
+    color: black;
+}
+
+.main_rules {
+    color: #343b3f;
+}
+
+.start_here {
+    background-color: white;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.navbar {
+    font-size: 18px;
+}
+
+.navbar-nav li {
+    padding-right: .5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1078ff;
+}
+
+.home-inner {
+    background-image: url(../images/dark-space.jpg);
+}
+
+.about-inner {
+    background-image: url(../images/about_space.jpg);
+}
+
+.team-inner {
+    background-image: url(../images/team_space.jpg);
+}
+
+.caption {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 38%
+}
+
+.caption h1 {
+    font-size: 3.8rem;
+    padding-bottom: 1rem;
+}
+
+.caption h3 {
+    padding-bottom: 1.6rem;
+}
+
+.narrow {
+    margin: 1.5rem auto;
+    padding-top: 2rem;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    padding: 2rem 0 3.5rem;
+    border-radius: 0;
+}
+
+h3.heading {
+    font-size: 1.9rem;
+    margin-bottom: 1.9rem;
+}
+
+.heading-underline {
+    width: 5rem;
+    height: .2rem;
+    background-color: #1078ff;
+    margin: 0 auto 2rem;
+}
+
+.feature {
+    color: #1078ff;
+}
+
+.about-steps {
+    color: black;
+}
+
+.fixed {
+    background-image: url(../images/space_rules.jpg);
+    z-index: -1;
+}
+
+.dark {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 7rem 2rem;
+}
+
+footer {
+    background-color: #343b3f;
+    color: white;
+    padding: 2rem 0 2rem;
+    margin-top: 1rem;
+}
+
+footer img {
+    height: 5rem;
+    margin: 1.5rem 0;
+}
+
+footer a {
+    color: white;
+}
+
+footer i {
+    font-size: 1.6rem;
+    margin: 1.2rem .5rem 0 0;
+}
+
+footer i:hover {
+    color: #1078ff;
+}
+
+hr.socket {
+    width: 100%;
+    border-top: .2rem solid rgba(255, 255, 255, 0.49);
+}
+
+.contact_section p {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .caption h1 {
+        font-size: 2.3rem;
+        padding-bottom: .5rem;
+    }
+
+    .caption h3 {
+        padding-bottom: 1.2rem;
+    }
+}
+
+
+.login_card {
+    color: white;
+    margin: auto;
+    padding: 2rem 0 2rem;
+}
+
+.register_card {
+    color: white;
+    margin: auto;
+    padding: 2rem 0 2rem;
+}
+
+
+.wrapper {
+    text-align: center;
+}
+
+.user_icon {
+    font-size: 3.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.user_login_card {
+    width: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #212628;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+
+}
+
+.form_container {
+    margin-top: 40px;
+}
+
+.user_register_card {
+    width: 650px;
+    /*margin-top: auto;*/
+    /*margin-bottom: auto;*/
+    background: #212628;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+
+}
+
+.articles_list {
+    color: #343b3f;
+}
+
+.profile_media_card {
+    color: white;
+    font-size: 1.2rem;
+    width: 350px;
+    margin: auto;
+    padding: 3rem 0 3rem;
+}
+
+
+.profile_card {
+    color: white;
+    margin: auto;
+    padding: 1.8rem 0 3rem;
+}
+
+.user_profile_card {
+    width: 500px;
+    margin-top: auto;
+    background: #212628;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+
+}
+
+.user_media_card {
+    width: 600px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #212628;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+
+}
+
+
+.profile_card i {
+    color: #1078ff;
+    font-size: 1.7rem;
+    height: 30px;
+}
+
+.profile_card p {
+    font-size: 1.5rem;
+    padding: 0.5rem 0 1rem;
+    margin-top: 1rem;
+}
+
+.login_or_register {
+    color: white;
+}
+
+.or {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login_register {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.add_button button {
+    padding-right: 2rem;
+}

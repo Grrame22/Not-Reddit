@@ -1,0 +1,22 @@
+{% extends 'startup/base.html' %}
+
+{% load crispy_forms_filters %}
+
+{% block title %}Create article{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="d-flex justify-content-center" style="margin: 2rem">
+            <div class="form-group" style="color: white; font-size: 1.1rem">
+                <form method="POST" action=".">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-center">
+                        <input type="submit" value="Save" class="btn btn-success btn-lg">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

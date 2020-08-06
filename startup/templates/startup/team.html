@@ -1,0 +1,73 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Team{% endblock title %}
+
+{% block content %}
+    <div class="team-landing">
+        <div class="team-wrap">
+            <div class="team-inner">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about_div">
+        <div class="caption text-center">
+            <h1 style="margin-top: 1rem; color: white">The Not Reddit team</h1>
+        </div>
+    </div>
+
+    <div class="about-meaning" style="background-color: white; color: black">
+        <div class="col-10 narrow text-center">
+            <p class="lead" style="font-size: 1.5rem">
+                The creator: Nathan Munteanu<a href="{% url 'author_details' creator %}">(grrame22)</a>
+            </p>
+            <p style="font-size: 1.5rem"><img src="../../../static/images/me.jpg" height="526"></p>
+        </div>
+    </div>
+
+    <div class="team-jumbo">
+        <div class="jumbotron" style="background-color: #343b3f">
+            <div class="narrow text-center">
+                <div class="col-12">
+                    <h3 class="heading">But know, we find new enthusiasts for this startup</h3>
+                    <h4>If <strong>You</strong> are a:</h4>
+                    <div class="card-columns" style="margin-top: 2rem">
+                        <div class="card" style="width: 18rem; color: black">
+                            <div class="card-body">
+                                <i class="fas fa-magic" style="color: black; font-size: 3rem"></i>
+                                <h5 class="card-title" style="font-size: 2rem; margin-top: 1rem">Designer</h5>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem; color: black">
+                            <div class="card-body">
+                                <i class="fas fa-terminal" style="color: black; font-size: 3rem"></i>
+                                <h5 class="card-title" style="font-size: 2rem; margin-top: 1rem">Developer</h5>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem; color: black">
+                            <div class="card-body">
+                                <i class="fas fa-smile" style="color: black; font-size: 3rem"></i>
+                                <h5 class="card-title" style="font-size: 2rem; margin-top: 1rem">Or a human</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <p style="font-size: 1.3rem; margin-top: 2rem">Just write to our <a href="{% url 'contacts_page' %}">email</a> or send a resume. We need more interesting people to create interesting products!</p>
+            </div>
+        </div>
+
+
+        <div class="start_here">
+            <div class="col-13 narrow text-center" style="color: black; margin-top: 2rem">
+                <p class="lead">
+                    &copy; Not Reddit team
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

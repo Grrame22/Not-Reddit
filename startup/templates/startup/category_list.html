@@ -1,0 +1,76 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Category list{% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% for category in category_list %}
+            <div class="container text-center" style="width: max-content; font-size: 1.1rem">
+            {% if category.id is 1 %}
+            <div class="card my-3 user_media_card"
+                 style="background: red">
+            <div class="card-body my-3">
+                <a href="{% url 'category_article_list' category.id %}" style="color: white">{{ category }}</a>
+            </div>
+            {% else %}
+            {% if category.id is 2 %}
+                <div class="card my-3 user_media_card"
+                     style="background: orange">
+                <div class="card-body my-3">
+                    <a href="{% url 'category_article_list' category.id %}" style="color: white">{{ category }}</a>
+                </div>
+            {% else %}
+                {% if category.id is 3 %}
+                    <div class="card my-3 user_media_card"
+                         style="background: green">
+                    <div class="card-body my-3">
+                        <a href="{% url 'category_article_list' category.id %}" style="color: white">{{ category }}</a>
+                    </div>
+                {% else %}
+                    {% if category.id is 4 %}
+                        <div class="card my-3 user_media_card"
+                             style="background: dodgerblue">
+                        <div class="card-body my-3">
+                            <a href="{% url 'category_article_list' category.id %}"
+                               style="color: white">{{ category }}</a>
+                        </div>
+                    {% else %}
+                        {% if category.id is 5 %}
+                            <div class="card my-3 user_media_card"
+                                 style="background: blue">
+                            <div class="card-body my-3">
+                                <a href="{% url 'category_article_list' category.id %}"
+                                   style="color: white">{{ category }}</a>
+                            </div>
+                        {% else %}
+                            {% if category.id is 6 %}
+                                <div class="card my-3 user_media_card"
+                                     style="background: #6116a7">
+                                <div class="card-body my-3">
+                                    <a href="{% url 'category_article_list' category.id %}"
+                                       style="color: white">{{ category }}</a>
+                                </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <div class="login_or_register">
+            <div class="container">
+                <div class="card-body my-1">
+                    <h3 class="card-title">You aren't Login into your account.</h3>
+                    <p class="card-text">Please: <a href={% url 'login' %}>Login</a> or <a
+                            href={% url 'register_page' %}>Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock content %}

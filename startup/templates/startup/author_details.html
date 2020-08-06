@@ -1,0 +1,35 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="d-flex justify-content-center form_container">
+            <div class="user_profile_card">
+                <div class="profile_card">
+                    <p class="card-text my-3"><i class="far fa-user-circle"></i>
+                        Name: {{ author.username }}</p>
+                    <p class="card-text"><i class="far fa-envelope"></i>
+                        Email: {{ author.email }}</p>
+                    {% if all_user_media is 0 %}
+                    {% else %}
+                        <a href="{% url 'user_media_page'  author.username %}"><small class="card-text"
+                                                                                      style="font-size: 1.3rem">More
+                            about
+                            this
+                            author</small></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if all_articles is 0 %}
+    {% else %}
+        <div class="text-center" style="margin: 2rem 0 2rem">
+            <a class="btn btn-primary btn-lg" href="{% url 'author_articles' author.username %}">User's
+                articles</a>
+        </div>
+    {% endif %}
+
+
+{% endblock content %}

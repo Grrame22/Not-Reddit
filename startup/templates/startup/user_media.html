@@ -1,0 +1,27 @@
+{% extends "startup/base.html" %}
+
+{% load crispy_forms_filters %}
+
+{% block title %}Media{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="d-flex justify-content-center form_container">
+            <div class="user_media_card">
+                <div class="profile_media_card">
+                    <div class="profile_media_icon" style="text-align: center">
+                        <i class="fas fa-info-circle" style="font-size: 3rem; margin-bottom: 1rem;color: #1078ff"></i>
+                    </div>
+                    <form method="POST" action=".">
+                        {% csrf_token %}
+                        {{ media|crispy }}
+                        <div class="text-center">
+                            <input type="submit" value="Save" class="btn btn-success btn-lg">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

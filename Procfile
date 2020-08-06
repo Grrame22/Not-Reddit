@@ -1,0 +1,1 @@
+web: gunicorn Not_Reddit.wsgi

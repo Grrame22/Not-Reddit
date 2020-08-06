@@ -1,0 +1,126 @@
+{% load static %}
+{% load recaptcha3 %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../../static/images/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f2248fdd7c.js" crossorigin="anonymous"></script>
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all"
+          rel="stylesheet">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
+          rel="stylesheet">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fixed.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fixed_second.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fixed_team.css' %}">
+    <link rel="script" href="{% static 'scripts/js/script.js' %}">
+    <title>{% block title %}{% endblock title %}</title>
+
+    {% recaptcha_init %}
+    {% recaptcha_ready action_name="homepage" %}
+</head>
+<body data-spy="scroll" data-target="#navbarResponsive">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        {% if user.is_authenticated %}
+            <a class="navbar-brand" href="{% url 'article_list' %}"><img src="../../static/images/favicon.png"
+                                                                         width="50"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        {% else %}
+            <a class="navbar-brand" href="{% url 'home_page' %}"><img src="../../static/images/favicon.png"
+                                                                      width="50"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        {% endif %}
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            {% if user.is_authenticated %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link mr-sm-2" href="{% url 'article_list' %}">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link mr-sm-2" href="{% url 'category_list' %}">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2" href="{% url 'about_page' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'team_page' %}">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'contacts_page' %}">Contacts</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'profile_page' %}"><i
+                                class="fas fa-user-circle"></i> {{ user.username }}</a>
+                    </li>
+                </ul>
+            {% else %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link mr-sm-2" href="{% url 'home_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2" href="{% url 'about_page' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'team_page' %}">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'contacts_page' %}">Contacts</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-sm-2 my-lg-0" href="{% url 'register_page' %}">Register</a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible text-center">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% block content %}{% endblock content %}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

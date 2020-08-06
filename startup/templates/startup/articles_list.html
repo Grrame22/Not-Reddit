@@ -1,0 +1,62 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h3 style="font-size: 3rem; text-align: center; margin: 1rem 0 2rem; color: white">Make here something amazing!</h3>
+        <div class="container text-center">
+            <a class="btn btn-outline-light btn-lg" href="{% url 'article_create' %}">Create article</a>
+            <div class="card-columns">
+                {% for article in articles_list %}
+                    <div class="card my-3 user_media_card" style="color: white">
+                        <div class="card-body my-2">
+                            {% if article.category.id is 1 %}
+                                <h1><i class="fas fa-laptop-code"></i></h1>
+                            {% else %}
+                                {% if article.category.id is 2 %}
+                                    <h1><i class="fas fas fa-server"></i></h1>
+                                {% else %}
+                                    {% if article.category.id is 3 %}
+                                        <h1><i class="fas fa-music"></i></h1>
+                                    {% else %}
+                                        {% if article.category.id is 4 %}
+                                            <h1><i class="fas fa-paint-brush"></i></h1>
+                                        {% else %}
+                                            {% if article.category.id is 5 %}
+                                                <h1><i class="fas fa-user-friends"></i></h1>
+                                            {% else %}
+                                                {% if article.category.id is 6 %}
+                                                    <h1><i class="fas fa-atom"></i></h1>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                            <h5 class="card-title"><a href="{{ article.get_absolute_url }}"
+                                                      style="color: #1078ff">{{ article.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ article.date }}
+                                | <strong>Author: {{ article.author }}
+                                </strong></p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="login_or_register">
+            <div class="container">
+                <div class="card-body my-1">
+                    <h3 class="card-title">You aren't Login into your account.</h3>
+                    <p class="card-text">Please: <a href={% url 'login' %}>Login</a> or <a
+                            href={% url 'register_page' %}>Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock content %}

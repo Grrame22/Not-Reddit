@@ -1,0 +1,147 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Not Reddit{% endblock title %}
+
+{% block content %}
+    <div class="landing">
+        <div class="home-wrap">
+            <div class="home-inner">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="home_div">
+        <div class="caption text-center">
+            <img src=../../../static/images/favicon.png height="100px">
+            <h1>Welcome to Not Reddit</h1>
+            <h3>Write your thoughts here</h3>
+            <a class="btn btn-outline-light btn-lg" href="{% url 'register_page' %}">Get Started</a>
+        </div>
+    </div>
+
+    <div class="meaning">
+        <div class="col-12 narrow text-center">
+            <h1>What does it mean?</h1>
+            <p class="lead">
+                With Not Reddit you can write everything! Yeah, just think about your prefer themes and
+                write about them what do you want. Why "Not Reddit"? Well, it's just a fun name)
+            </p>
+            <a class="btn btn-outline-dark btn-md" href="{% url 'about_page' %}">More about this project</a>
+        </div>
+    </div>
+
+    <div class="first_jumbo">
+        <div class="jumbotron">
+            <div class="narrow text-center">
+                <div class="col-12">
+                    <h3 class="heading">Features</h3>
+                    <div class="heading-underline">
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="feature">
+                                <i class="fas fa-cog fa-3x my-4"></i>
+                            </div>
+                            <h3>Custom Articles</h3>
+                            <p>Custom your own articles and make them interesting.</p>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="feature">
+                                <i class="fas fa-share-square fa-3x my-4"></i>
+                            </div>
+                            <h3>Share with other users</h3>
+                            <p>Share your articles with other users and look at their too.</p>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="feature">
+                                <i class="fas fa-comments fa-3x my-4"></i>
+                            </div>
+                            <h3>See the feedback</h3>
+                            <p>Look at the other user's articles and make a feedback with them just for some
+                                thoughts!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_rules">
+            <div class="fixed-background">
+                <div class="row dark text-center">
+                    <div class="col-12">
+                        <h3 class="heading">We have 3 main rules</h3>
+                        <div class="heading-underline">
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <div class="feature">
+                                    <i class="fas fa-times-circle fa-3x my-4"></i>
+                                </div>
+                                <h3>No negative</h3>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="feature">
+                                    <i class="fas fa-people-carry fa-3x my-4"></i>
+                                </div>
+                                <h3>Support other users</h3>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="feature">
+                                    <i class="fas fa-globe-americas fa-3x my-4"></i>
+                                </div>
+                                <h3>Change your environment</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fixed-wrap">
+                            <div class="fixed">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="start_here">
+        <div class="col-12 narrow text-center">
+            <p class="lead">
+                Want to start building your own article and share it with your friends?
+            </p>
+            <a class="btn btn-outline-primary btn-lg" href="{% url 'register_page' %}">Start here</a>
+        </div>
+    </div>
+
+
+    <div class="contact_section" style="margin: -1rem">
+        <footer>
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center">
+                    <img src=../../../static/images/favicon.png width="80">
+                    <p>This site was created with purpose to develop human ability to create.
+                        If you just interesting to sharing your emotions in an article or
+                        telling something to our world - this is a new place for you!</p>
+                    <strong>Contact info</strong>
+                    <p>notreddit.live@gmail.com</p>
+                    <a href="https://www.facebook.com/natan.munteanu.180"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://twitter.com/grrame22"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/grrame22/"><i class="fab fa-instagram"></i></a>
+                </div>
+                <hr class="socket">
+                &copy; Not Reddit, Inc.
+            </div>
+        </footer>
+    </div>
+
+
+
+{% endblock content %}
+

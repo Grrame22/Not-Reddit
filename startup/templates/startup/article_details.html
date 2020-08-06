@@ -1,0 +1,94 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Article details{% endblock title %}
+
+{% load crispy_forms_filters %}
+
+{% block content %}
+
+    {% if article.color.id is 1 %}
+        <div class="container" style="max-width: 60rem">
+            <div class="card my-3 border-white" style="background-color: #343b3f">
+                <div class="card-body my-5" style="margin: auto; color: white">
+                    <h5 class="card-title" style="font-size: 1.8rem; text-align: center">{{ article.title }}</h5>
+                    <hr style="border-top: .05rem solid white; margin: 2rem 0 2rem">
+                    <pre class="card-text"
+                         style="font-family: Montserrat-Medium; font-size: 1.3rem; color: white; max-width: 55rem">{{ article.description|linebreaksbr }}</pre>
+                    <hr style="border-top: .05rem solid white; margin: 2rem 0 2rem">
+                    <p class="card-text"><small class="text-muted" style="font-size: 1rem">{{ article.date }}&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="{% url 'author_details' article.author %}">{{ article.author }} </a></small></p>
+                    {% if user.is_staff %}
+                        <div>
+                            <a class="btn btn-danger btn"
+                               href="{% url 'article_delete' article.url %}">Delete</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin: 2rem 0 2rem">
+            <a href="{% url 'comment_create' article.url %}" class="btn btn-warning btn-lg">Comment</a>
+        </div>
+        <div class="container" style="width: auto">
+            {% if comments_count is 0 %}
+            {% else %}
+                {% if comments_count is 1 %}
+                    <h4 style="font-size: 1.6rem; color: white; margin: 2rem 0 2rem">{{ comments_count }} comment</h4>
+                {% else %}
+                    <h4 style="font-size: 1.6rem; color: white; margin: 2rem 0 2rem">{{ comments_count }} comments</h4>
+                {% endif %}
+            {% endif %}
+            {% for user_comment in all_comments %}
+                <div class="card my-3 border-white" style="background-color: #23272b">
+                    <div class="card-body" style=" color: white">
+                        <p class="card-text"><strong
+                                style="color: orange;">{{ user_comment.author }}</strong> {{ user_comment.description }}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="container" style="max-width: 60rem">
+            <div class="card my-3 border-white" style="background-color: white">
+                <div class="card-body my-5" style="margin: auto; color: black">
+                    <h5 class="card-title" style="font-size: 1.8rem; text-align: center">{{ article.title }}</h5>
+                    <hr style="border-top: .05rem solid black; margin: 2rem 0 2rem">
+                    <pre class="card-text"
+                         style="font-family: Montserrat-Medium; font-size: 1.3rem; color: black; max-width: 55rem">{{ article.description|linebreaksbr }}</pre>
+                    <hr style="border-top: .05rem solid black; margin: 2rem 0 2rem">
+                    <p class="card-text"><small class="text-muted" style="font-size: 0.9rem">{{ article.date }}&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="{% url 'author_details' article.author %}">{{ article.author }} </a></small></p>
+                    {% if user.is_staff %}
+                        <div>
+                            <a class="btn btn-danger btn"
+                               href="{% url 'article_delete' article.url %}">Delete</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin: 2rem 0 2rem">
+            <a href="{% url 'comment_create' article.url %}" class="btn btn-warning btn-lg">Comment</a>
+        </div>
+        <div class="container" style="width: auto">
+            {% if comments_count is 0 %}
+            {% else %}
+                {% if comments_count is 1 %}
+                    <h4 style="font-size: 1.6rem; color: white; margin: 2rem 0 2rem">{{ comments_count }} comment</h4>
+                {% else %}
+                    <h4 style="font-size: 1.6rem; color: white; margin: 2rem 0 2rem">{{ comments_count }} comments</h4>
+                {% endif %}
+            {% endif %}
+            {% for user_comment in all_comments %}
+                <div class="card my-3 border-dark" style="background-color: white">
+                    <div class="card-body" style="color: black">
+                        <p class="card-text"><strong
+                                style="color: orange;">{{ user_comment.author }}</strong> {{ user_comment.description }}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock content %}

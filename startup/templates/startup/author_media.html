@@ -1,0 +1,46 @@
+{% extends "startup/base.html" %}
+
+{% block title %}Meida{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="d-flex justify-content-center form_container">
+            <div class="user_profile_card">
+                <div class="profile_card">
+                    {% if user_media.gender.id is 1 %}
+                        <img src="../../../static/images/man.png" height="150" style="display: block; margin: auto">
+                    {% else %}
+                        {% if user_media.gender.id is 2 %}
+                            <img src="../../../static/images/woman.png" height="150"
+                                 style="display: block; margin: auto">
+                        {% else %}
+                            {% if user_media.gender.id is 3 %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    <p class="card-text my-3">
+                        <i class="fas fa-list-alt"></i> Preferences: {{ user_media.preference_category }}</p>
+                    {% if user_media.facebook %}
+                        <div style="margin-bottom: 1rem">
+                            <i class="fab fa-facebook-square"></i>
+                            <small style="font-size: 1.1rem"><a href="{{ user_media.facebook }}">facebook</a></small>
+                        </div>
+                    {% endif %}
+                    {% if user_media.instagram %}
+                        <div style="margin-bottom: 1rem">
+                            <i class="fab fa-instagram-square"></i>
+                            <small style="font-size: 1.1rem"><a href="{{ user_media.instagram }}">instagram</a></small>
+                        </div>
+                    {% endif %}
+                    {% if user_media.twitter %}
+                        <div style="margin-bottom: 1rem">
+                            <i class="fab fa-twitter-square"></i>
+                            <small style="font-size: 1.1rem"><a href="{{ user_media.twitter }}">twitter</a></small>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

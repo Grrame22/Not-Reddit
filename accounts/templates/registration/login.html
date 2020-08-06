@@ -1,0 +1,35 @@
+{% extends "startup/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <div class="login_back">
+        <div class="container">
+            <div class="d-flex justify-content-center form_container">
+                <div class="user_login_card">
+                    <div class="login_card">
+                        <div class="user_icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 class="card-title text-center">Login</h3>
+                        <div class="d-flex justify-content-center">
+                            <form method="POST" class="form-group">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <p>Don't have an account? Create one <a href="/register">here</a></p>
+                                <div class="wrapper">
+                                    <button type="submit" class="btn btn-outline-success btn-lg">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
