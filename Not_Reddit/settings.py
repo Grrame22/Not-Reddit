@@ -1,11 +1,8 @@
 import os
 
 import dj_database_url
-from dotenv import load_dotenv
 
 from django.contrib.messages import constants as messages
-
-load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_PRIVATE_KEY")
