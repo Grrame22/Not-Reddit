@@ -24,7 +24,8 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live"]
+ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live", ".notreddit.live",
+                 "www.notreddit.live"]
 
 # Application definition
 
