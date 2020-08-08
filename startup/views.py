@@ -35,6 +35,13 @@ class ContactsPageView(View):
         return render(request, "startup/contacts.html")
 
 
+class ComingSoonPageView(View):
+    """Coming soon(support) page view"""
+
+    def get(self, request):
+        return render(request, "startup/coming_soon.html")
+
+
 class ArticlesViews(View):
     """List of Articles"""
 

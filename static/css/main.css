@@ -78,6 +78,10 @@ body {
     background-image: url(../images/about_space.jpg);
 }
 
+.coming-inner {
+    background-image: url(../images/coming_soon.jpg);
+}
+
 .team-inner {
     background-image: url(../images/team_space.jpg);
 }

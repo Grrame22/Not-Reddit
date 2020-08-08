@@ -1,0 +1,23 @@
+{% extends "startup/base.html" %}
+
+{% block title %}About{% endblock title %}
+
+{% block content %}
+    <div class="about-landing">
+        <div class="about-wrap">
+            <div class="coming-inner">
+            </div>
+        </div>
+    </div>
+
+    <div class="about_div">
+        <div class="caption text-center" style="margin: -7rem 0 3rem">
+            {% if user.is_authenticated %}
+                <a class="btn btn-outline-light btn-lg" style="font-size: 2rem" href="{% url 'article_list' %}">Home</a>
+            {% else %}
+                <a class="btn btn-outline-light btn-lg" style="font-size: 2rem" href="{% url 'home_page' %}">Home</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock content %}
