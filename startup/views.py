@@ -176,7 +176,6 @@ def article_create_view(request):
         if form_username == str(current_username):
             form.save()
             messages.success(request, "You have created a new article!")
-            # form = ArticleForm()
             return redirect("article_list")
         else:
             messages.error(request, "Please, enter your user name")
