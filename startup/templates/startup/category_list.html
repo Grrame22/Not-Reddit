@@ -5,61 +5,46 @@
 {% block content %}
     {% if user.is_authenticated %}
         {% for category in category_list %}
-            <div class="container text-center" style="width: max-content; font-size: 1.1rem">
-            {% if category.id is 1 %}
-            <div class="card my-3 user_media_card"
-                 style="background: red">
-            <div class="card-body my-3">
-                <a href="{% url 'category_article_list' category.id %}" style="color: white">{{ category }}</a>
-            </div>
-            {% else %}
-            {% if category.id is 2 %}
-                <div class="card my-3 user_media_card"
-                     style="background: orange">
-                <div class="card-body my-3">
-                    <a href="{% url 'category_article_list' category.id %}" style="color: white">{{ category }}</a>
-                </div>
-            {% else %}
-                {% if category.id is 3 %}
-                    <div class="card my-3 user_media_card"
-                         style="background: green">
-                    <div class="card-body my-3">
-                        <a href="{% url 'category_article_list' category.id %}" style="color: white">{{ category }}</a>
-                    </div>
+            <div class="container text-center" style="width: max-content; margin-top: 1.1rem">
+                {% if category.id is 1 %}
+                    <a href="{% url 'category_article_list' category.id %}">
+                        <button class="button button_red">{{ category }}</button>
+                    </a>
                 {% else %}
-                    {% if category.id is 4 %}
-                        <div class="card my-3 user_media_card"
-                             style="background: dodgerblue">
-                        <div class="card-body my-3">
-                            <a href="{% url 'category_article_list' category.id %}"
-                               style="color: white">{{ category }}</a>
-                        </div>
+                    {% if category.id is 2 %}
+                        <a href="{% url 'category_article_list' category.id %}">
+                            <button class="button button_orange">{{ category }}</button>
+                        </a>
                     {% else %}
-                        {% if category.id is 5 %}
-                            <div class="card my-3 user_media_card"
-                                 style="background: blue">
-                            <div class="card-body my-3">
-                                <a href="{% url 'category_article_list' category.id %}"
-                                   style="color: white">{{ category }}</a>
-                            </div>
+                        {% if category.id is 3 %}
+                            <a href="{% url 'category_article_list' category.id %}">
+                                <button class="button button_yellow">{{ category }}</button>
+                            </a>
                         {% else %}
-                            {% if category.id is 6 %}
-                                <div class="card my-3 user_media_card"
-                                     style="background: #6116a7">
-                                <div class="card-body my-3">
-                                    <a href="{% url 'category_article_list' category.id %}"
-                                       style="color: white">{{ category }}</a>
-                                </div>
+                            {% if category.id is 4 %}
+                                <a href="{% url 'category_article_list' category.id %}">
+                                    <button class="button button_green">{{ category }}</button>
+                                </a>
+                            {% else %}
+                                {% if category.id is 5 %}
+                                    <a href="{% url 'category_article_list' category.id %}">
+                                        <button class="button button_lightblue">{{ category }}</button>
+                                    </a>
+                                {% else %}
+                                    {% if category.id is 6 %}
+                                        <a href="{% url 'category_article_list' category.id %}">
+                                            <button class="button button_blue" style="margin-bottom: 1.1rem">{{ category }}</button>
+                                        </a>
+                                    {% endif %}
                                 {% endif %}
                             {% endif %}
                         {% endif %}
                     {% endif %}
                 {% endif %}
-            {% endif %}
-        </div>
-        </div>
+            </div>
+            </div>
         {% endfor %}
-    </div>
+        </div>
     {% else %}
         <div class="login_or_register">
             <div class="container">
