@@ -6,5 +6,5 @@
   <a href="#">Link 2</a> |
   <a href="#">Link 3</a>
   <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
+  <img src="http://notreddit.live/static/images/favicon.png">
 </p>
