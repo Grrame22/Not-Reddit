@@ -13,22 +13,26 @@
                     <div class="card my-3 user_media_card" style="color: white">
                         <div class="card-body my-2">
                             {% if article.category.id is 1 %}
-                                <h1><i class="fas fa-laptop-code"></i></h1>
+                            <h1><i class="fas fa-laptop-code"></i></h1>
                             {% else %}
-                                {% if article.category.id is 2 %}
-                                    <h1><i class="fas fas fa-server"></i></h1>
+                            {% if article.category.id is 2 %}
+                                <h1><i class="fas fas fa-server"></i></h1>
+                            {% else %}
+                                {% if article.category.id is 3 %}
+                                    <h1><i class="fas fa-music"></i></h1>
                                 {% else %}
-                                    {% if article.category.id is 3 %}
-                                        <h1><i class="fas fa-music"></i></h1>
+                                    {% if article.category.id is 4 %}
+                                        <h1><i class="fas fa-paint-brush"></i></h1>
                                     {% else %}
-                                        {% if article.category.id is 4 %}
-                                            <h1><i class="fas fa-paint-brush"></i></h1>
+                                        {% if article.category.id is 5 %}
+                                            <h1><i class="fas fa-user-friends"></i></h1>
                                         {% else %}
-                                            {% if article.category.id is 5 %}
-                                                <h1><i class="fas fa-user-friends"></i></h1>
+                                            {% if article.category.id is 6 %}
+                                                <h1><i class="fas fa-atom"></i></h1>
                                             {% else %}
-                                                {% if article.category.id is 6 %}
-                                                    <h1><i class="fas fa-atom"></i></h1>
+                                                {% if article.category.id is 7 %}
+                                                    <h1><i class="fas fa-ellipsis-h"></i></h1>
+                                                    {% endif %}
                                                 {% endif %}
                                             {% endif %}
                                         {% endif %}

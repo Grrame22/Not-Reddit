@@ -42,6 +42,13 @@
                                                 style="color: #234ce2">Science</strong>
                                         </h3>
 
+                                    {% else %}
+                                        {% if category_id is 7 %}
+                                            <h3 style="margin: 2rem 0 2rem; color: white">Articles category: <strong
+                                                    style="color: #234ce2">Other</strong>
+                                            </h3>
+
+                                        {% endif %}
                                     {% endif %}
                                 {% endif %}
                             {% endif %}
@@ -69,6 +76,10 @@
                                                 {% else %}
                                                     {% if category_id is 6 %}
                                                         <h1><i class="fas fa-atom"></i></h1>
+                                                    {% else %}
+                                                        {% if category_id is 7 %}
+                                                            <h1><i class="fas fa-ellipsis-h"></i></h1>
+                                                        {% endif %}
                                                     {% endif %}
                                                 {% endif %}
                                             {% endif %}
